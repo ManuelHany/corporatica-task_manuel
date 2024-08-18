@@ -9,9 +9,7 @@ services:
     build:
       context: .
     volumes:
-      - .:/app
-    environment:
-      - FLASK_APP=app/app.py
+      - ./app:/app
     command:
       - flask
       - run
