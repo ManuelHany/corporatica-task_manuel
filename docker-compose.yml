@@ -1,16 +1,18 @@
-version: '3.8'
+version: '3.9'
 
 services:
   flask_app:
+
     container_name: flask_app
     tty: true
     stdin_open: true
-    build: .
+    build:
+      context: .
     volumes:
       - .:/app
     environment:
       - FLASK_APP=app/app.py
-    command: 
+    command:
       - flask
       - run
       - --host=0.0.0.0
